@@ -1,0 +1,11 @@
+.idea
+*.iml
+out
+gen
+/env
+/db.sqlite3
+
+/staticfiles
+/app/migrations
+/media
+/images
