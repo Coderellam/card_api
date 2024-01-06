@@ -41,8 +41,7 @@ class Card(models.Model):
     """def post => viewda yoziladi , modelda => def save yoziladi, logikasi deyarli bir xil, sqalashdan oldingi.... 
     class ichidagi vorisni ozgartirib oladi """
 
-    def save(
-            self, force_insert=False, force_update=False, using=None, update_fields=None):
+    def save(self, force_insert=False, force_update=False, using=None, update_fields=None):
         self.card_number = random.randint(8600000000133245, 8600999999999999)
         self.expire = self.generate_expire_date()
         message_str = f"Congratulations Dear {self.holder.name}, you obtained a/an {self.type} card from our bank" \
@@ -52,14 +51,6 @@ class Card(models.Model):
         return super().save(force_insert, force_update, using, update_fields)
 
     """ expire ni ham shu logikada shu funksiya ichida yozish (tepadagi kod,) """
-
-    # pastdagi kodim
-
-    # def save(self, force_insert=False, force_update=False, using=None, update_fields=None):
-    #     current_date = datetime.now()
-    #     self.expire = current_date + timedelta(days=3 * 365)
-    #     return super().save(force_insert, force_update, using, update_fields)
-
     def generate_expire_date(self):
         current_date = date.today()
         expire_date = current_date + timedelta(days=3 * 365)

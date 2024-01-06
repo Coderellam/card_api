@@ -2,6 +2,7 @@
 *.iml
 out
 gen
+/venv
 /env
 /db.sqlite3
 

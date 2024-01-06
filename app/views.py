@@ -71,19 +71,6 @@ class TransferMoneyView(generics.CreateAPIView):  # from gpt
         else:
             return Response({"error": "Insufficient balance"}, status=status.HTTP_400_BAD_REQUEST)
 
- #        def post(self, request, *args, **kwargs):
- #            self.
- # #
- #            def save(
- #                    self, force_insert=False, force_update=False, using=None, update_fields=None):
- #                self.card_number = random.randint(8600000000133245, 8600999999999999)
- #                self.expire = self.generate_expire_date()
- #                message_str = f"Congratulations Dear {self.holder.name}, you obtained a/an {self.type} card from our bank" \
- #                              f"Your card number is {self.card_number}" \
- # \
- #                        requests.get(settings.TELEGRAM_URL.format(message_str))
- #                return super().save(force_insert, force_update, using, update_fields)
-
 
 class CheckCardholderBalanceView(generics.RetrieveAPIView):
     queryset = Holder.objects.all()

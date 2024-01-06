@@ -1,5 +1,5 @@
 from rest_framework.serializers import ModelSerializer
-from .models import Holder, Card
+from .models import Holder, Card, Transaction_history
 
 from datetime import datetime
 
